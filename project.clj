@@ -11,6 +11,11 @@
             [lein-externs "0.1.6"]
             [lein-shell "0.5.0"]
             [lein-figwheel "0.5.9" :exclusions [org.clojure/core.cache]]]
+  :profiles
+  {:dev
+   {:dependencies [[figwheel "0.5.11"]
+                   [com.cemerick/piggieback "0.2.2"]
+                   [figwheel-sidecar "0.5.11"]]}}
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
