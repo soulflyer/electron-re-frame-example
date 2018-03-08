@@ -13,3 +13,7 @@ node_modules/*
 *.ipr
 *.iws
 electron/*
+app/dev/js/out_front/*
+app/dev/js/out_main/*
+app/prod/js/out_front/*
+app/prod/js/out_main/*
