@@ -17,5 +17,7 @@ app/dev/js/out_front/*
 app/dev/js/out_main/*
 app/prod/js/out_front/*
 app/prod/js/out_main/*
+app/dev/js/front.js
+app/prod/js/front.js
 .nrepl-port
 figwheel_server.log
