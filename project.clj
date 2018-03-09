@@ -4,9 +4,13 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.473" :exclusions [org.apache.ant/ant]]
+                 [org.clojure/clojurescript "1.10.64" :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.2.395"]
-                 [figwheel "0.5.9"]]
+                 [figwheel "0.5.9"]
+                 [reagent "0.7.0"]
+                 [re-com "0.9.0"]
+                 [re-frame "0.10.4"]
+                 [org.clojure/spec.alpha "0.1.143"]]
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-externs "0.1.6"]
             [lein-shell "0.5.0"]
@@ -15,7 +19,8 @@
   {:dev
    {:dependencies [[figwheel "0.5.11"]
                    [com.cemerick/piggieback "0.2.2"]
-                   [figwheel-sidecar "0.5.11"]]}}
+                   [figwheel-sidecar "0.5.11"]
+                   [day8.re-frame/re-frame-10x "0.2.1-SNAPSHOT"]]}}
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
@@ -80,7 +85,7 @@
 
                                              ;;:source-map "app/dev/js/test.js.map"
                                              :pretty-print true
-                                             :output-wrapper true}}
+                                             :output-wrapper true }}
                        :dev-front {:source-paths ["src_front" "src_front_profile/setup_front/dev"]
                                    :incremental true
                                    :jar true
@@ -103,7 +108,12 @@
 
                                               ;;:source-map "app/dev/js/test.js.map"
                                               :pretty-print true
-                                              :output-wrapper true}}
+                                              :output-wrapper true
+                                              :closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
+                                              :preloads [day8.re-frame-10x.preload]
+                                              :main "setup-front.init"
+                                              :asset-path "js/out_front"
+                                              }}
                        :prod-main {:source-paths ["src"]
                                    :incremental true
                                    :jar true
