@@ -1,15 +1,31 @@
-(ns anh-front.views
+(ns setup-front.views
   (:require [re-frame.core :as rf]
             [re-com.core :as re-com]
-;;            [anh-front.subs :as subs]
-            ))
+            [setup-front.subs :as subs]))
 
 (defn title []
-  [:h1 (str "Hello frae me ")])
+  (let [name (rf/subscribe [::subs/name])]
+    [:h1 (str "Hello from " @name)]))
 
+(defn request-it-button
+  []
+  [re-com/button
+   :label "Get Projects"
+   :on-click #(rf/dispatch [:request-it])])
 
+(defn projects
+  []
+  [:div.projects
+   (first @(rf/subscribe [::subs/projects]))])
+
+(defn ui
+  []
+  [:div
+   [request-it-button]
+   [projects]])
 
 (defn main-panel []
   [re-com/v-box
    :height "100%"
-   :children [[title] ]])
+   :children [[title]
+              [ui]]])
