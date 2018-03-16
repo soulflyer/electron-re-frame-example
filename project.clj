@@ -15,12 +15,13 @@
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-externs "0.1.6"]
             [lein-shell "0.5.0"]
-            [lein-figwheel "0.5.9" :exclusions [org.clojure/core.cache]]]
+            [lein-figwheel "0.5.13" :exclusions [org.clojure/core.cache]]
+            ]
   :profiles
   {:dev
-   {:dependencies [[figwheel "0.5.11"]
+   {:dependencies [[figwheel "0.5.13"]
                    [com.cemerick/piggieback "0.2.2"]
-                   [figwheel-sidecar "0.5.11"]
+                   [figwheel-sidecar "0.5.13"]
                    [day8.re-frame/re-frame-10x "0.2.1-SNAPSHOT"]]}}
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]

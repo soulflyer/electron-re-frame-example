@@ -15,9 +15,16 @@ node_modules/*
 electron/*
 app/dev/js/out_front/*
 app/dev/js/out_main/*
+app/dev/js/front.js
+app/dev/js/cljsbuild-main.js
+app/dev/js/externs.js
+app/dev/js/externs_front.js
 app/prod/js/out_front/*
 app/prod/js/out_main/*
-app/dev/js/front.js
 app/prod/js/front.js
+app/prod/js/cljsbuild-main.js
+app/prod/js/externs.js
+app/prod/js/externs_front.js
 .nrepl-port
 figwheel_server.log
+package-lock.json
