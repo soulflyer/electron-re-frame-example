@@ -1,12 +1,13 @@
 (ns setup-front.events
-    (:require [re-frame.core :as rf]
+  (:require [re-frame.core :as rf]
 
             [ajax.core :as ajax]
             [day8.re-frame.http-fx]
             [re-frame.core :refer [reg-event-fx]]
             [setup-front.db :as db]
             [setup-front.config :as config]
-            [cognitect.transit :as transit]))
+            [cognitect.transit :as transit]
+            [day8.re-frame.tracing :refer-macros [fn-traced defn-traced]]))
 
 (rf/reg-event-db
  ::initialize-db
