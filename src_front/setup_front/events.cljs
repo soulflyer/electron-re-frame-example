@@ -16,12 +16,12 @@
 
 (rf/reg-event-db
   :process-response
-  (fn
+  (fn-traced
     [db [_ response]]           ;; destructure the response from the event vector
     (let [reader (transit/reader :json)]
       (-> db
-                (assoc :loading? false) ;; take away that "Loading ..." UI
-                (assoc :projects (transit/read reader response)))))) ;; fairly lame processing
+          (assoc :loading? false) ;; take away that "Loading ..." UI
+          (assoc :projects (transit/read reader response)))))) ;; fairly lame processing
 
 (rf/reg-event-db
   :bad-response

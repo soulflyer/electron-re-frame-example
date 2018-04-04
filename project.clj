@@ -9,7 +9,7 @@
                  [reagent "0.7.0"]
                  [re-com "0.9.0"]
                  [re-frame "0.10.5"]
-                 [org.clojure/spec.alpha "0.1.143"]
+                 ;; [org.clojure/spec.alpha "0.1.143"]
                  [cljs-ajax "0.7.3"]
                  [day8.re-frame/http-fx "0.1.5"]]
   :plugins [[lein-cljsbuild "1.1.5"]
