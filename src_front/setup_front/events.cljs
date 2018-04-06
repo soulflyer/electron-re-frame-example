@@ -1,18 +1,18 @@
 (ns setup-front.events
   (:require [re-frame.core :as rf]
-
-            [ajax.core :as ajax]
             [day8.re-frame.http-fx]
             [re-frame.core :refer [reg-event-fx]]
             [setup-front.db :as db]
+            [ajax.core :as ajax]
             [setup-front.config :as config]
             [cognitect.transit :as transit]
-            [day8.re-frame.tracing :refer-macros [fn-traced defn-traced]]))
+            [day8.re-frame.tracing :refer-macros [fn-traced defn-traced]]
+            ))
 
 (rf/reg-event-db
- ::initialize-db
- (fn  [_ _]
-   db/default-db))
+  ::initialize-db
+  (fn-traced  [_ _]
+              db/default-db))
 
 (rf/reg-event-db
   :process-response
@@ -25,7 +25,7 @@
 
 (rf/reg-event-db
   :bad-response
-  (fn
+  (fn-traced
     [db [_ response]]
     (-> db
         (assoc :loading? false)
@@ -34,7 +34,7 @@
 
 (rf/reg-event-fx        ;; <-- note the `-fx` extension
   :request-it        ;; <-- the event id
-  (fn                ;; <-- the handler function
+  (fn-traced               ;; <-- the handler function
     [{db :db} _]     ;; <-- 1st argument is coeffect, from which we extract db
 
     ;; we return a map of (side) effects

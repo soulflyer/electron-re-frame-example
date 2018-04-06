@@ -3,24 +3,24 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.10.64" :exclusions [org.apache.ant/ant]]
-                 [org.clojure/core.async "0.2.395"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.238" :exclusions [org.apache.ant/ant]]
+                 [org.clojure/core.async "0.4.474"]
                  [reagent "0.7.0"]
                  [re-com "0.9.0"]
                  [re-frame "0.10.5"]
-                 ;; [org.clojure/spec.alpha "0.1.143"]
+                 ;;                 [org.clojure/spec.alpha "0.1.143"]
                  [cljs-ajax "0.7.3"]
                  [day8.re-frame/http-fx "0.1.5"]]
   :plugins [[lein-cljsbuild "1.1.5"]
             [lein-externs "0.1.6"]
             [lein-shell "0.5.0"]
-            [lein-figwheel "0.5.13" :exclusions [org.clojure/core.cache]]]
+            [lein-figwheel "0.5.15" :exclusions [org.clojure/core.cache]]]
   :profiles
   {:dev
-   {:dependencies [[figwheel "0.5.13"]
+   {:dependencies [[figwheel "0.5.15"]
                    [com.cemerick/piggieback "0.2.2"]
-                   [figwheel-sidecar "0.5.13"]
+                   [figwheel-sidecar "0.5.15"]
                    [day8.re-frame/re-frame-10x "0.3.0"]
                    [day8.re-frame/tracing "0.5.0"]]}}
   :source-paths ["src_tools"]
