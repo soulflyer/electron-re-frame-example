@@ -14,6 +14,8 @@ $ ./electron/Electron.app/Contents/MacOS/Electron app/dev
 ## Use
 Fire it up. It says hello. Check out the [re-frame documentation](https://github.com/Day8/re-frame) for where to go next. Also check out how to use [re-frame-10x](https://github.com/Day8/re-frame-10x).
 
+The `master` branch just says hello. There is a little more code in the `call-api` branch, including bare bones event subs and views files for re-frame. It also shows re-frame-10x in action.
+
 ## License
 
 
